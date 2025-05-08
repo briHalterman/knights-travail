@@ -25,14 +25,17 @@ module KnightMoves
     queue = [[start]]
     visited = [start]
 
-    puts "Queue: #{queue}"
-    puts "Visited: #{visited}"
+    # puts "Queue: #{queue}"
+    # puts "Visited: #{visited}"
 
     while !queue.empty?
       current_path = queue.shift
       current_square = current_path.last
 
       if current_square == target
+        moves = current_path.length - 1
+        puts "You made it in #{moves} move(s)! Here's your path:"
+        current_path.each { |step| puts " #{step}" }
         return current_path
       else
         valid_moves(current_square).each do |move|
