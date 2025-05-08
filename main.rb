@@ -1,3 +1,6 @@
 require_relative 'lib/knight_moves'
 
-p KnightMoves.knight_moves([3, 3], [4, 3])
+start = [3, 3]
+target = [4, 3]
+
+KnightMoves.knight_moves(start, target)
