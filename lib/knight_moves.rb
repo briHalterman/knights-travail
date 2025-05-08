@@ -27,5 +27,22 @@ module KnightMoves
 
     puts "Queue: #{queue}"
     puts "Visited: #{visited}"
+
+    while !queue.empty?
+      current_path = queue.shift
+      current_square = current_path.last
+
+      if current_square == target
+        return current_path
+      else
+        valid_moves(current_square).each do |move|
+          next if visited.include?(move)
+
+          visited << move
+          new_path = current_path + [move]
+          queue << new_path
+        end
+      end
+    end
   end
 end
