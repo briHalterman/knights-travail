@@ -3,7 +3,8 @@
 module KnightMoves
   def self.valid_moves(position)
     knight_offsets = [
-      [1, 2], [2, 1], [2, -1], [1, -2], [-1, -2], [-2, -1], [-2, 1], [-1, 2]
+      [1, 2], [2, 1], [2, -1], [1, -2],
+      [-1, -2], [-2, -1], [-2, 1], [-1, 2]
     ]
 
     valid_moves = []
@@ -18,5 +19,13 @@ module KnightMoves
     end
 
     return valid_moves
+  end
+
+  def self.knight_moves(start, target)
+    queue = [[start]]
+    visited = [start]
+
+    puts "Queue: #{queue}"
+    puts "Visited: #{visited}"
   end
 end
